@@ -1,45 +1,158 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>김준태의 자기소개 페이지</title>
+    <title>김준태의 자기소개 페이지 - 장래 희망</title>
     <style>
-        #manubar{background: rgb(158, 61, 6);}
-        #manubar ul{margin:0 ; padding:30px; width: 567px;}
-        #manubar ul li{
-            display : inline-block;
-            list-style-type: none;
-            padding : 0px 15px
+        /* 기본 스타일 초기화 및 전체 여백 */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
-        #manubar ul li a{color:white; text-decoration:none}
-        #manubar ul li a:hover{color: black}
+        
+        body {
+            font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+            background-color: #faf9f8;
+            color: #333333;
+            line-height: 1.6;
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* 1. 이전 페이지들과 맞춘 둥근 상단 메뉴바 */
+        #manubar {
+            background: rgb(158, 61, 6);
+            border-radius: 30px; /* 완전하게 둥근 모서리 */
+            box-shadow: 0 4px 12px rgba(158, 61, 6, 0.15); /* 부드러운 그림자 */
+            margin-bottom: 40px;
+            overflow: hidden;
+        }
+        
+        #manubar ul {
+            display: flex;
+            justify-content: space-around;
+            list-style-type: none;
+            padding: 15px 25px;
+        }
+        
+        #manubar ul li {
+            display: inline-block;
+        }
+        
+        #manubar ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 15px;
+            padding: 8px 18px;
+            border-radius: 20px; /* 호버 시 나타나는 배경도 둥글게 */
+            transition: all 0.3s ease;
+        }
+        
+        #manubar ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+        }
+
+        /* 제목 스타일 */
+        h1 {
+            font-size: 30px;
+            color: #111;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 22px;
+            color: rgb(158, 61, 6);
+            margin-top: 35px;
+            margin-bottom: 15px;
+        }
+
+        /* 부드러운 구분선 */
+        hr {
+            border: none;
+            height: 1px;
+            background-color: #e5e5e5;
+            margin: 20px 0 30px 0;
+        }
+
+        /* 2. 학과 및 직업 리스트를 둥글둥글한 알약/태그 형태로 변경 */
+        .dream-list {
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 15px;
+            margin-bottom: 25px;
+        }
+
+        .dream-list li {
+            background-color: #ffffff;
+            color: #444;
+            padding: 12px 24px;
+            border-radius: 50px; /* 완벽하게 둥근 모서리 */
+            font-weight: bold;
+            font-size: 15px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+            transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+        }
+
+        /* 마우스 올렸을 때의 둥근 인터랙션 효과 */
+        .dream-list li:hover {
+            transform: translateY(-3px);
+            background-color: #f5eae4;
+            color: rgb(158, 61, 6);
+            border-color: rgba(158, 61, 6, 0.3);
+        }
+
+        /* 1순위 강조 스타일 (반도체 연구원 전용) */
+        .dream-list li.priority-1 {
+            background-color: #f5eae4;
+            color: rgb(158, 61, 6);
+            border: 1.5px solid rgb(158, 61, 6);
+        }
+        
+        .dream-list li.priority-1:hover {
+            background-color: rgb(158, 61, 6);
+            color: #ffffff;
+        }
     </style>
 </head>
 <body>
+
+    <!-- 둥근 상단 메뉴바 -->
     <nav id="manubar">
         <ul>
             <li><a href="index.html">메인 페이지</a></li>
-            <li><a href="ability.html">개인 역량</a>
+            <li><a href="ability.html">개인 역량</a></li> <!-- 닫는 태그 수정 -->
             <li><a href="future.html">장래 희망</a></li>
             <li><a href="tmi.html">인간 김준태의 TMI</a></li>
         </ul>
     </nav>
+
     <h1>세부페이지 2 : 장래 희망</h1>
     <hr>
+
     <h2>현재 고민중인 학과</h2>
-    <ul>
-        <li>물리학과</li>
-        <li>화학과</li>
-        <li>전기전자 공학과</li>
-        <li>컴퓨터 공학과</li>
-        <li>토목 공학과</li>
+    <ul class="dream-list">
+        <li>⚛️ 물리학과</li>
+        <li>🧪 화학과</li>
+        <li>⚡ 전기전자 공학과</li>
+        <li>💻 컴퓨터 공학과</li>
+        <li>🏗️ 토목 공학과</li>
     </ul>
+
     <h2>되고 싶은 직업</h2>
-    <ul>
-        <li>반도체 연구원(1순위)</li>
-        <li>게임 개발자</li>
-        <li>게임 디렉터</li>
+    <ul class="dream-list">
+        <!-- 1순위 강조용 클래스 추가 -->
+        <li class="priority-1">🔬 반도체 연구원 (1순위)</li>
+        <li>🎮 게임 개발자</li>
+        <li>🕹️ 게임 디렉터</li>
     </ul>
+
 </body>
 </html>
