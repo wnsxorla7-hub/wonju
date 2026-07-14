@@ -136,6 +136,7 @@
             border-radius: 12px; /* 이미지 모서리를 좀 더 부드럽게 크롭 */
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
             transition: transform 0.3s ease;
+            cursor: pointer; /* 마우스 올렸을 때 손가락 커서 표시 */
         }
 
         .favorite-img:hover {
@@ -175,11 +176,10 @@
 </head>
 <body>
 
-    <!-- 둥근 상단 메뉴바 -->
     <nav id="manubar">
         <ul>
             <li><a href="index.html">메인 페이지</a></li>
-            <li><a href="ability.html">개인 역량</a></li> <!-- 닫는 태그 수정 -->
+            <li><a href="ability.html">개인 역량</a></li>
             <li><a href="future.html">장래 희망</a></li>
             <li><a href="tmi.html">인간 김준태의 TMI</a></li>
         </ul>
@@ -213,7 +213,9 @@
             <tr>
                 <td>👤 인물</td>
                 <td>
-                    <img src="person.jpg" alt="좋아하는 인물" class="favorite-img">
+                    <a href="https://namu.wiki/w/%EC%83%88%EC%82%BC%20XXX%EA%B0%80%20%EB%8C%80%EB%8B%A8%ED%95%98%EB%8B%A4%EA%B3%A0%20%EB%8A%90%EA%BB%B4%EC%A7%80%EB%84%A4" target="_blank">
+                        <img src="person.jpg" alt="좋아하는 인물" class="favorite-img">
+                    </a>
                 </td>
             </tr>
             <tr>
@@ -226,7 +228,6 @@
     </table>
 
     <h2>연락처</h2>
-    <!-- 둥근 카드 레이아웃 적용 -->
     <ul class="contact-card">
         <li>📧 <strong>이메일:</strong> wnsxorla7@gmail.com</li>
         <li>🌐 <strong>GitHub:</strong> <a href="https://github.com/wnsxorla7-hub" target="_blank">https://github.com/wnsxorla7-hub</a></li>
