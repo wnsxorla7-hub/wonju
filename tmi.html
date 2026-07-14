@@ -172,6 +172,73 @@
         .contact-card a:hover {
             text-decoration: underline;
         }
+
+        /* ⚡ 대상혁 숭배 전용 위젯 스타일 */
+        .worship-container {
+            margin-top: 35px;
+            background: linear-gradient(135deg, #1e1b18 0%, #0c0a09 100%);
+            border: 2px solid #d97706; /* 상징적인 골드 테두리 */
+            border-radius: 16px;
+            padding: 25px;
+            text-align: center;
+            color: #f3f4f6;
+            box-shadow: 0 10px 25px rgba(217, 119, 6, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .worship-container:hover {
+            box-shadow: 0 12px 30px rgba(217, 119, 6, 0.25);
+            transform: translateY(-2px);
+        }
+
+        .worship-title {
+            color: #fbbf24;
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        .worship-quote {
+            font-style: italic;
+            font-size: 14px;
+            color: #a1a1aa;
+            margin-bottom: 20px;
+        }
+
+        .worship-btn {
+            background: linear-gradient(to right, #d97706, #b45309);
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3);
+            transition: all 0.2s ease;
+        }
+
+        .worship-btn:hover {
+            background: linear-gradient(to right, #f59e0b, #d97706);
+            transform: scale(1.05);
+        }
+
+        .worship-btn:active {
+            transform: scale(0.95);
+        }
+
+        .worship-counter {
+            margin-top: 15px;
+            font-size: 15px;
+            color: #e4e4e7;
+        }
+
+        .worship-counter span {
+            color: #fbbf24;
+            font-weight: bold;
+            font-size: 18px;
+        }
     </style>
 </head>
 <body>
@@ -233,5 +300,31 @@
         <li>🌐 <strong>GitHub:</strong> <a href="https://github.com/wnsxorla7-hub" target="_blank">https://github.com/wnsxorla7-hub</a></li>
     </ul>
 
-</body>
+    <!-- 👑 대상혁 상시 숭배 기능 컴포넌트 추가 -->
+    <div class="worship-container">
+        <div class="worship-title">🙌 대상혁 상시 숭배 구역 🙌</div>
+        <div class="worship-quote">"모든 길은 저를 통합니다."</div>
+        <button class="worship-btn" onclick="worshipFaker()">🙇‍♂️ 기습 숭배하기</button>
+        <div class="worship-counter">
+            현재 숭배 횟수: <span id="count">0</span>회
+        </div>
+    </div>
+
+    <!-- 간단한 숭배 카운터 작동 스크립트 -->
+    <script>
+        let worshipCount = 0;
+        function worshipFaker() {
+            worshipCount++;
+            document.getElementById('count').innerText = worshipCount;
+            
+            // 숭배 횟수에 따른 재치있는 알림창 이스터에그 (필요 없다면 지우셔도 됩니다!)
+            if (worshipCount === 5) {
+                alert("새삼 5번이나 연속으로 숭배하다니, 준태님의 안목이 대단하십니다. 👑");
+            } else if (worshipCount === 10) {
+                alert("⚡ 기습 숭배 완료! 대 상 혁 ⚡");
+            }
+        }
+    </script>
+
+</body> 
 </html>
