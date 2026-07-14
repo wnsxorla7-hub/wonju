@@ -1,109 +1,236 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>김준태의 자기소개 페이지</title>
+    <title>김준태의 자기소개 페이지 - TMI</title>
     <style>
-        #manubar{background: rgb(158, 61, 6);}
-        #manubar ul{margin:0 ; padding:30px; width: 567px;}
-        #manubar ul li{
-            display : inline-block;
-            list-style-type: none;
-            padding : 0px 15px
+        /* 기본 스타일 초기화 및 전체 여백 */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
-        #manubar ul li a{color:white; text-decoration:none}
-        #manubar ul li a:hover{color: black}
-    .favorite-table{
-    width:100%;
-    border-collapse:collapse;
-    margin-top:20px;
-}
+        
+        body {
+            font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+            background-color: #faf9f8;
+            color: #333333;
+            line-height: 1.6;
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
 
-.favorite-table th{
-    background:#162436;
-    color:white;
-    padding:15px;
-    text-align:left;
-}
+        /* 1. 이전 페이지들과 일관성을 맞춘 둥근 상단 메뉴바 */
+        #manubar {
+            background: rgb(158, 61, 6);
+            border-radius: 30px; /* 완전하게 둥근 모서리 */
+            box-shadow: 0 4px 12px rgba(158, 61, 6, 0.15); /* 부드러운 그림자 */
+            margin-bottom: 40px;
+            overflow: hidden;
+        }
+        
+        #manubar ul {
+            display: flex;
+            justify-content: space-around;
+            list-style-type: none;
+            padding: 15px 25px;
+        }
+        
+        #manubar ul li {
+            display: inline-block;
+        }
+        
+        #manubar ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 15px;
+            padding: 8px 18px;
+            border-radius: 20px; /* 호버 시 나타나는 배경도 둥글게 */
+            transition: all 0.3s ease;
+        }
+        
+        #manubar ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+        }
 
-.favorite-table td{
-    border:1px solid #ddd;
-    padding:15px;
-    vertical-align:middle;
-}
+        /* 제목 스타일 */
+        h1 {
+            font-size: 30px;
+            color: #111;
+            margin-bottom: 10px;
+        }
 
-.favorite-table td:first-child{
-    width:170px;
-    font-weight:bold;
-}
+        h2 {
+            font-size: 22px;
+            color: rgb(158, 61, 6);
+            margin-top: 35px;
+            margin-bottom: 15px;
+        }
 
-.favorite-img{
-    width:180px;
-    height:250px;
-    object-fit:cover;
-    border-radius:8px;
-    box-shadow:0 3px 10px rgba(0,0,0,.15);
-}
+        /* 부드러운 구분선 */
+        hr {
+            border: none;
+            height: 1px;
+            background-color: #e5e5e5;
+            margin: 20px 0 30px 0;
+        }
 
-audio{
-    width:300px;
-}
+        /* 관심사 리스트 스타일 */
+        .interest-list {
+            margin-left: 20px;
+            margin-bottom: 25px;
+            color: #444;
+        }
+        .interest-list li {
+            margin-bottom: 10px;
+        }
+
+        /* 2. 각진 부분을 깎아 둥글게 만든 테이블 */
+        .favorite-table {
+            width: 100%;
+            border-collapse: separate; /* 모서리를 깎기 위해 separate 적용 */
+            border-spacing: 0;
+            margin-top: 20px;
+            border-radius: 12px; /* 테이블 전체 모서리 둥글게 */
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .favorite-table th {
+            background: #162436;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .favorite-table td {
+            border-bottom: 1px solid #e2e8f0;
+            padding: 15px;
+            vertical-align: middle;
+            background: white;
+        }
+
+        /* 테이블 마지막 행 테두리 마감 처리 */
+        .favorite-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .favorite-table td:first-child {
+            width: 170px;
+            font-weight: bold;
+            background: #f8fafc;
+            color: #475569;
+        }
+
+        /* 이미지 모서리 둥글게 */
+        .favorite-img {
+            width: 180px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 12px; /* 이미지 모서리를 좀 더 부드럽게 크롭 */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+            transition: transform 0.3s ease;
+        }
+
+        .favorite-img:hover {
+            transform: scale(1.03); /* 이미지 마우스 올렸을 때 살짝 커지는 효과 */
+        }
+
+        /* 3. 연락처 박스를 둥글고 깔끔한 카드 형태로 변경 */
+        .contact-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 15px; /* 카드의 둥근 테두리 */
+            padding: 20px;
+            list-style-type: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+        }
+
+        .contact-card li {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: #444;
+        }
+
+        .contact-card li:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-card a {
+            color: rgb(158, 61, 6);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-card a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
+
+    <!-- 둥근 상단 메뉴바 -->
     <nav id="manubar">
         <ul>
             <li><a href="index.html">메인 페이지</a></li>
-            <li><a href="ability.html">개인 역량</a>
+            <li><a href="ability.html">개인 역량</a></li> <!-- 닫는 태그 수정 -->
             <li><a href="future.html">장래 희망</a></li>
             <li><a href="tmi.html">인간 김준태의 TMI</a></li>
         </ul>
     </nav>
+
     <h1>세부페이지 3 : 김준태의 TMI</h1>
     <hr>
+
     <h2>현재 준태의 관심사</h2>
-    <ul>
-        <li>주식 투자 (아무리 생각해도 삼전이 10일떄 들어갔어야 했다 진짜)</li>
-        <li>컴퓨터 부품 가격 (지금도 하이엔드에 가깝긴 한데 조금 떨어지는게 있어서 부품 갈아야하는디 가격이 안떨어져)</li>
-        <li>공부 (입시의 위기감을 뼈저리게 느끼는 중)</li>
+    <ul class="interest-list">
+        <li>📈 <strong>주식 투자</strong> (아무리 생각해도 삼전이 10일 때 들어갔어야 했다 진짜)</li>
+        <li>⚙️ <strong>컴퓨터 부품 가격</strong> (지금도 하이엔드에 가깝긴 한데 조금 떨어지는게 있어서 부품 갈아야하는디 가격이 안떨어져)</li>
+        <li>✍️ <strong>공부</strong> (입시의 위기감을 뼈저리게 느끼는 중 🥲)</li>
     </ul>
+
     <h2>준태가 좋아하는 것들</h2>
-<table class="favorite-table">
-    <thead>
-        <tr>
-            <th>구분</th>
-            <th>내용</th>
-        </tr>
-    </thead>
+    <table class="favorite-table">
+        <thead>
+            <tr>
+                <th>구분</th>
+                <th>내용</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>📚 책</td>
+                <td>
+                    <img src="book.jpg" alt="좋아하는 책" class="favorite-img">
+                </td>
+            </tr>
+            <tr>
+                <td>👤 인물</td>
+                <td>
+                    <img src="person.jpg" alt="좋아하는 인물" class="favorite-img">
+                </td>
+            </tr>
+            <tr>
+                <td>🎮 게임</td>
+                <td>
+                    <img src="game.jpg" alt="좋아하는 게임" class="favorite-img">
+                </td>
+            </tr>
+        </tbody>
+    </table>
 
-    <tbody>
-        <tr>
-            <td>📚 책</td>
-            <td>
-                <img src="book.jpg" alt="좋아하는 책" class="favorite-img">
-            </td>
-        </tr>
-
-        <tr>
-            <td>👤 인물</td>
-            <td>
-                <img src="person.jpg" alt="좋아하는 인물" class="favorite-img">
-            </td>
-        </tr>
-
-        <tr>
-            <td>🎮 게임</td>
-            <td>
-                <img src="game.jpg" alt="좋아하는 게임" class="favorite-img">
-            </td>
-        </tr>
-    </tbody>
-</table>
     <h2>연락처</h2>
-    <ul>
-        <li>E메일: wnsxorla7@gmail.com</li>
-        <li>Git Hub:<a href="https://github.com/wnsxorla7-hub">https://github.com/wnsxorla7-hub</a></li>
+    <!-- 둥근 카드 레이아웃 적용 -->
+    <ul class="contact-card">
+        <li>📧 <strong>이메일:</strong> wnsxorla7@gmail.com</li>
+        <li>🌐 <strong>GitHub:</strong> <a href="https://github.com/wnsxorla7-hub" target="_blank">https://github.com/wnsxorla7-hub</a></li>
     </ul>
+
 </body>
 </html>
