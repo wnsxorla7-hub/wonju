@@ -1,42 +1,142 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>김준태의 자기소개 페이지</title>
     <style>
-        #manubar{background: rgb(158, 61, 6);}
-        #manubar ul{margin:0 ; padding:30px; width: 567px;}
-        #manubar ul li{
-            display : inline-block;
-            list-style-type: none;
-            padding : 0px 15px
+        /* 기본 스타일 초기화 및 본문 여백 */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
-        #manubar ul li a{color:white; text-decoration:none}
-        #manubar ul li a:hover{color: black}
         
+        body {
+            font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+            background-color: #faf9f8;
+            color: #333333;
+            line-height: 1.6;
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* 1. 상단 메뉴바의 모서리를 완전하게 둥글게 (border-radius: 30px) */
+        #manubar {
+            background: rgb(158, 61, 6);
+            border-radius: 30px; 
+            box-shadow: 0 4px 12px rgba(158, 61, 6, 0.15); /* 부드러운 그림자 추가 */
+            margin-bottom: 40px;
+            overflow: hidden; /* 내부 요소가 넘쳐서 각지지 않도록 처리 */
+        }
+        
+        #manubar ul {
+            display: flex;
+            justify-content: space-around;
+            list-style-type: none;
+            padding: 15px 25px;
+        }
+        
+        #manubar ul li {
+            display: inline-block;
+        }
+        
+        /* 메뉴 항목 호버 시에도 둥글게 배경색이 차오르도록 설정 */
+        #manubar ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 15px;
+            padding: 8px 18px;
+            border-radius: 20px; 
+            transition: all 0.3s ease;
+        }
+        
+        #manubar ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2); /* 마우스 올렸을 때 둥근 하이라이트 */
+            color: #ffffff;
+        }
+
+        /* 타이틀 디자인 */
+        h1 {
+            font-size: 32px;
+            color: #111;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        /* 부드러운 얇은 회색 구분선 */
+        hr {
+            border: none;
+            height: 1px;
+            background-color: #e5e5e5;
+            margin: 30px 0;
+        }
+
+        h2 {
+            font-size: 22px;
+            color: rgb(158, 61, 6);
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 12px;
+            color: #444;
+        }
+
+        /* 2. 핵심 키워드를 둥글둥글한 알약 형태(태그 모양)로 디자인 변경 */
+        .keyword-list {
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .keyword-list li {
+            background-color: #f5eae4;
+            color: rgb(158, 61, 6);
+            padding: 10px 22px;
+            border-radius: 50px; /* 양 끝이 완전히 둥근 알약 모양 */
+            font-weight: bold;
+            font-size: 14px;
+            border: 1px solid rgba(158, 61, 6, 0.1);
+        }
     </style>
 </head>
 <body>
+
     <nav id="manubar">
         <ul>
             <li><a href="index.html">메인 페이지</a></li>
-            <li><a href="ability.html">개인 역량</a>
-            <li><a href="future.html">장래 희망</a></li>
+            <li><a href="ability.html">개인 역량</a></li> <li><a href="future.html">장래 희망</a></li>
             <li><a href="tmi.html">인간 김준태의 TMI</a></li>
         </ul>
     </nav>
+
     <h1>김준태 (Kim Jun Tae)</h1>
-    <p>원주고등학교 2학년 1반 8번</p>
+    <p class="subtitle">원주고등학교 2학년 1반 8번</p>
+    
     <hr>
+
     <h2>소개</h2>
     <p>안녕하세요 열심히 살고있는 김준태입니다.</p>
-    <p>대한민국의 고2로서 열심히 공부해서 대학 가려고 노력하고있습니다.(응원바람)</p>
+    <p>대한민국의 고2로서 열심히 공부해서 대학 가려고 노력하고있습니다. (응원바람 👍)</p>
+    
     <hr>
+
     <h2>핵심 키워드</h2>
-    <ul>
+    <ul class="keyword-list">
         <li>공부시러 / 과학조아 / 게임조아</li>
-        <li>귀차니즘 / 오늘 저녁 뭐 먹지 / 할말이 없다람쥐</li>
+        <li>귀차니즘 / 오늘 저녁 뭐 먹지 / 할말이 없다람쥐 🐿️</li>
     </ul>
+
 </body>
 </html>
